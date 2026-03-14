@@ -24,27 +24,25 @@ export default async function PreviewPage({
     notFound();
   }
 
-  // Serve the raw HTML as a full-page response via dangerouslySetInnerHTML trick.
-  // We embed it in a frameless page that sets the document to the raw file content.
   return (
-    <html>
+    <html lang="ru">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>{`
-          html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
-          iframe { display: block; width: 100%; height: 100vh; border: none; }
-        `}</style>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: "html,body{margin:0;padding:0;width:100%;height:100%}iframe{display:block;width:100%;height:100vh;border:none}",
+          }}
+        />
       </head>
       <body>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              const html = ${JSON.stringify(html)};
-              const blob = new Blob([html], { type: 'text/html' });
-              const url = URL.createObjectURL(blob);
-              const iframe = document.createElement('iframe');
+              var html = ${JSON.stringify(html)};
+              var blob = new Blob([html], { type: 'text/html' });
+              var url = URL.createObjectURL(blob);
+              var iframe = document.createElement('iframe');
               iframe.src = url;
               iframe.style.cssText = 'display:block;width:100%;height:100vh;border:none;';
               iframe.allow = 'pointer-lock';
