@@ -17,8 +17,6 @@ module.exports = {
         border: "var(--border)",
         card: "var(--card)",
         "card-hover": "var(--card-hover)",
-        accent: "var(--accent)",
-        "accent-fg": "var(--accent-fg)",
       },
     },
   },
