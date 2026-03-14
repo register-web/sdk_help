@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" href="data:,">
+    <title>sdk_help</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --card: #0f0f10;
+            --border: #202124;
+            --text: #f5f5f5;
+            --muted: #9a9aa0;
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-right: env(safe-area-inset-right, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --safe-left: env(safe-area-inset-left, 0px);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding:
+                calc(20px + var(--safe-top))
+                calc(16px + var(--safe-right))
+                calc(24px + var(--safe-bottom))
+                calc(16px + var(--safe-left));
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            width: min(100%, 720px);
+            margin: 0 auto;
+        }
+
+        .username {
+            display: inline-block;
+            margin-bottom: 28px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        .card {
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--card);
+        }
+
+        .card h1 {
+            margin: 0 0 10px;
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            line-height: 1.05;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+        }
+
+        .card p {
+            margin: 0 0 22px;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 16px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: #141415;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .button.primary {
+            background: #f5f5f5;
+            border-color: #f5f5f5;
+            color: #000;
+        }
+
+        @media (max-width: 480px) {
+            .actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="username" href="https://t.me/lalala53s" target="_blank" rel="noreferrer">t.me/lalala53s</a>
+
+        <section class="card">
+            <h1>Аренда</h1>
+            <p>Открыть игру или перейти к исходнику проекта.</p>
+            <div class="actions">
+                <a class="button primary" href="./gemini_rent.html">Открыть игру</a>
+                <a class="button" href="https://t.me/+vRsAKTf3zdk0ZWVi" target="_blank" rel="noreferrer">Сурс проекта</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
